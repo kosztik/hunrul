@@ -1,0 +1,49 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          
+# Required-Start:    
+# Required-Stop:
+# Should-Start:
+# Default-Start:     1 2 3 4 5
+# Default-Stop:
+# Short-Description:
+# Description:       
+#                    
+#                    
+#                    
+### END INIT INFO
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+. /lib/init/vars.sh
+
+do_start () {
+	
+	/usr/local/bin/hunrul.sh
+}
+
+do_status () {
+	echo ""
+}
+
+case "$1" in
+  start|"")
+	do_start
+	;;
+  restart|reload|force-reload)
+	echo "You can only start. it just set of iptables rules..." >&2
+	exit 3
+	;;
+  stop)
+	# No-op
+	;;
+  status)
+	do_status
+	exit $?
+	;;
+  *)
+	echo "Usage: hunrul [start| ]" >&2
+	exit 3
+	;;
+esac
+
+:
