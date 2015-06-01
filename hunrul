@@ -18,7 +18,14 @@ PATH=/sbin:/usr/sbin:/bin:/usr/bin
 
 do_start () {
 	
-	/usr/local/bin/hunrul.sh
+	/root/hunrul/src/hunrul.sh
+	echo "HUN jump inserted as INPUT first rule"
+	iptables -I INPUT 1 -j HUN
+}
+
+do_stop () {
+	iptables -D INPUT 1 
+	echo "HUN jump deleted from INPUT chain"
 }
 
 do_status () {
@@ -34,7 +41,7 @@ case "$1" in
 	exit 3
 	;;
   stop)
-	# No-op
+	do_stop
 	;;
   status)
 	do_status
