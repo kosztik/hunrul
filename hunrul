@@ -1,12 +1,12 @@
 #!/bin/sh
 ### BEGIN INIT INFO
-# Provides:          
-# Required-Start:    
-# Required-Stop:
-# Should-Start:
-# Default-Start:     1 2 3 4 5
-# Default-Stop:
-# Short-Description:
+# Provides: Istvan Kosztik
+# Required-Start: $all
+# Required-Stop: 
+# Should-Start: 
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: it will make the Hungarian rule chain
 # Description:       
 #                    
 #                    
