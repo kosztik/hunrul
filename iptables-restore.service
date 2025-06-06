@@ -1,0 +1,12 @@
+[Unit]
+Description=Restore iptables rules from /root/fw/fw.conf
+After=network.target
+Wants=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/iptables-restore-wrapper.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
